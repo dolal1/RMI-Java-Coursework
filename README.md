@@ -22,9 +22,12 @@ Show Revenue
 Olal David Holifield
  - Started project
  - Created Server and Client connection
+
 Ntwali Raymond
  - Created List functions and implementation
+
 Okoth Vien Trevor
  - Created Revenue and Guests functions and implementation
+
 Bawembye Tonny Ronald
  - Created Booking functions and implementation
