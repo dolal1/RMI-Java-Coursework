@@ -1,9 +1,9 @@
-//Room interface
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// Room interface
 public interface RoomManager extends Remote {
 
     // books a room of the specified type (if available), and registers the name of

@@ -1,26 +1,29 @@
 import java.util.ArrayList;
 
 public class Room {
-	//lists of gues for the room type
+    // Lists of guests for the room type
     private ArrayList<String> guests;
-    //total number of rooms
+    // Total number of rooms
     private int total;
 
-    //sets the total number of rooms
-    //creates a new array for the guests.
+    // Sets the total number of rooms
+    // Creates a new array for the guests.
     public Room(int total) {
         setTotal(total);
         guests = new ArrayList<String>();
     }
 
+    // Returns Total Numbert of Rooms
     public int getTotal() {
         return total;
     }
 
+    // Returns List of Guests
     public ArrayList<String> getGuests() {
         return guests;
     }
 
+    // Adds Guest to guest list
     public boolean addGuest(String guest) {
         if (this.guests.size() < total) {
             this.guests.add(guest);
@@ -29,7 +32,7 @@ public class Room {
         return false;
     }
 
-    //returns the number of guests in the room
+    // Returns the number of guests in the room
     public int size() {
         return guests.size();
     }
@@ -39,13 +42,3 @@ public class Room {
     }
 
 }
-
-///Server
-//Room
-//RoomType
-//RoomManager(Tonny)
-//RoomManagerImpl(T)
-
-//Client - (Olal)
-//HotelClientImpl inside the HotelClient
-//HotelClient

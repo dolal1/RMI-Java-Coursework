@@ -1,5 +1,3 @@
-
-
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -20,20 +18,20 @@ public class HotelClient {
             System.out.println("java Hotelclient revenue <server address>");
             return;
         }
-        //Makes sure connection is established
+        // Makes sure connection is established
         try {
             // connects to the server depending on the specified arguments
-        	//if arguments are provided.
-            if(args.length>=2)
-            client.startClient(args[1]);
+            // if arguments are provided.
+            if (args.length >= 2)
+                client.startClient(args[1]);
             else
-            System.out.println("Some arguments are required");
+                System.out.println("Some arguments are required");
         } catch (Exception e) {
             System.out.println("Can't connect to " + args[1]);
-            //returns to close the program when connection fails.
+            // returns to close the program when connection fails.
             return;
         }
-        // list arguments 
+        // list arguments
         if (args[0].equals("list") && args.length == 2) {
             System.out.println("List: ");
             HashMap<RoomType, Integer> list = client.list();
@@ -46,7 +44,7 @@ public class HotelClient {
                     .println(list.get(RoomType.TYPE4) + " rooms of type 4 are available for 230,000 UGX per night");
         }
         // book rooms
-        if (args[0].equals("book") &&  args.length == 4) {
+        if (args[0].equals("book") && args.length == 4) {
             try {
                 int type;
                 boolean result;
@@ -54,25 +52,25 @@ public class HotelClient {
                     type = Integer.parseInt(args[2]);
                     String name = args[3];
                     switch (type) {
-                    case 0:
-                        result = client.book(name, RoomType.TYPE0);
-                        break;
-                    case 1:
-                        result = client.book(name, RoomType.TYPE1);
-                        break;
-                    case 2:
-                        result = client.book(name, RoomType.TYPE2);
-                        break;
-                    case 3:
-                        result = client.book(name, RoomType.TYPE3);
-                        break;
-                    case 4:
-                        result = client.book(name, RoomType.TYPE4);
-                        break;
-                    default:
-                        System.out.println("type must be one of 0,1,2,3,4");
-                        result = false;
-                        break;
+                        case 0:
+                            result = client.book(name, RoomType.TYPE0);
+                            break;
+                        case 1:
+                            result = client.book(name, RoomType.TYPE1);
+                            break;
+                        case 2:
+                            result = client.book(name, RoomType.TYPE2);
+                            break;
+                        case 3:
+                            result = client.book(name, RoomType.TYPE3);
+                            break;
+                        case 4:
+                            result = client.book(name, RoomType.TYPE4);
+                            break;
+                        default:
+                            System.out.println("type must be one of 0,1,2,3,4");
+                            result = false;
+                            break;
                     }
                     if (result) {
                         System.out.println("Room booked successfully.");
@@ -90,14 +88,15 @@ public class HotelClient {
             System.out.println("Guests: ");
             guests.forEach(guest -> System.out.println(guest));
         }
-       // list revenue
-        if (args[0].equals("revenue") && args.length ==2) {
+        // list revenue
+        if (args[0].equals("revenue") && args.length == 2) {
             for (String revenue : client.revenue()) {
                 System.out.println(revenue);
             }
         }
     }
 }
+
 // to handle all the requests from the server(server communications)
 class HotelClientImpl {
 
@@ -105,6 +104,7 @@ class HotelClientImpl {
 
     public HotelClientImpl() throws RemoteException {
     }
+
     // look up to the server
     public void startClient(String address) throws RemoteException, NotBoundException, MalformedURLException {
         server = (RoomManager) Naming.lookup("rmi://" + address + ":1099/hotelservice");
