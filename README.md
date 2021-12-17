@@ -3,20 +3,20 @@ Hotel Management System done in  Java with the concept of RMI
 
 # File structure
 Server side includes
- -Room.java
- -RoomType.java
- -RoomManager.java
- -RoomManagerImpl.java
+ - Room.java
+ - RoomType.java
+ - RoomManager.java
+ - RoomManagerImpl.java
 
 Client side includes
- -HotelClient.java
- -HotelClientImpl.java
+ - HotelClient.java
+ - HotelClientImpl.java
 
 # Features
-List
-Book
-Show Guests
-Show Revenue
+ - List
+ - Book
+ - Show Guests
+ - Show Revenue
 
 # Contributors and Roles
 Olal David Holifield
