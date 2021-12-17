@@ -1,7 +1,7 @@
 # RMI-Java-Coursework
 Hotel Management System done in  Java with the concept of RMI 
 
-#File structure
+# File structure
 Server side includes
  -Room.java
  -RoomType.java
@@ -12,13 +12,13 @@ Client side includes
  -HotelClient.java
  -HotelClientImpl.java
 
-#Features
+# Features
 List
 Book
 Show Guests
 Show Revenue
 
-#Contributors and Roles
+# Contributors and Roles
 Olal David Holifield
  - Started project
  - Created Server and Client connection
